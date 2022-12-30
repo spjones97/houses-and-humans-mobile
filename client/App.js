@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { Appbar, Card } from 'react-native-paper';
 
-import logo from './assets/logo.png';
+import logo from './app/assets/logo.png';
 
 export default function App() {
   return (
@@ -10,7 +10,7 @@ export default function App() {
       <Appbar>
         <Text variant="titleMedium">Items</Text>
         <Image
-          source={require('./assets/logo.png')}
+          source={require('./app/assets/logo.png')}
         />
       </Appbar>
     </View>
