@@ -1,27 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { Appbar, Card } from 'react-native-paper';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import logo from './app/assets/logo.png';
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import LoginScreen from "./app/screens/LoginScreen";
+
+import logo from "./app/assets/logo.png";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Appbar>
-        <Text variant="titleMedium">Items</Text>
-        <Image
-          source={require('./app/assets/logo.png')}
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Welcome"
+          component={WelcomeScreen}
+          options={{ title: "Welcome" }}
         />
-      </Appbar>
-    </View>
+        <Stack.Screen name="Login" component={LoginScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

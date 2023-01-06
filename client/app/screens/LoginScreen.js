@@ -1,13 +1,13 @@
 import React from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 
-function WelcomeScreen({ navigation }) {
+function LoginScreen({ navigation }) {
   return (
     <View>
-      <Text>Welcome Screen</Text>
+      <Text>Login Screen</Text>
       <Button
-        title="Go to Login"
-        onPress={() => navigation.navigate("Login")}
+        title="Go to Welcome"
+        onPress={() => navigation.navigate("Welcome")}
       />
     </View>
   );
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WelcomeScreen;
+export default LoginScreen;
